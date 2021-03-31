@@ -1,6 +1,6 @@
-# SIMPLE_MERN_FILE_UPLOAD
+# SIMPLE_MERN_SHORT_DEMO_ELASTICSEARCH
 
-It's a simple example or demo project to show file upload operations
+It's a simple example or demo project to show Search Operations
 it's made by using following technologies
 
 - ReactJS
