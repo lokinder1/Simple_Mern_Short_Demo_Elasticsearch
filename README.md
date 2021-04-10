@@ -41,7 +41,7 @@ it's made by using following technologies
     sudo systemctl start kibana.service
 
     access kibana on Web
-    http://localhost:5601/ 
+    http://localhost:5601/
 
 - Server
     1. Move To Server Directory
@@ -64,3 +64,13 @@ it's made by using following technologies
     3. start Server App
     yarn start
 ```
+
+## Tasks Completed
+
+1. Homepage
+2. Basic Server
+
+## Demo ScreenShots
+
+- Home
+  ![home](home.png)

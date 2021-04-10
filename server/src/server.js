@@ -15,36 +15,36 @@ app.post("/movies", (req, res) => {
     .index({
       index: "movies",
       body: {
-        character: req.body.character,
-        quote: req.body.quote,
+        title: req.body.title,
+        content: req.body.content,
       },
     })
     .then((response) => {
       return res.json({ message: "Indexing successful", response: response });
     })
     .catch((err) => {
-      return res.status(500).json({ message: "Error" });
+      return res.status(500).json({ message: err });
     });
 });
 
 app.get("/movies", (req, res) => {
-  const searchText = req.query.text;
+  const searchText = req.query.searchText;
   esClient
     .search({
       index: "movies",
       body: {
         query: {
           match: {
-            quote: searchText,
+            content: searchText,
           },
         },
       },
     })
     .then((response) => {
-      return res.json(response.body);
+      return res.json(response.body.hits.hits);
     })
     .catch((err) => {
-      return res.status(500).json({ message: "Error" });
+      return res.status(500).json({ message: err });
     });
 });
 

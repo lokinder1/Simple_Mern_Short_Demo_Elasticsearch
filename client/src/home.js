@@ -1,13 +1,12 @@
-import React from "react";
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import HomeIcon from "@material-ui/icons/Home";
-import Paper from "@material-ui/core/Paper";
-
-import Button from "@material-ui/core/Button";
 import PersonalFooter from "@bit/lokinder1.footers.personal-footer";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import HomeIcon from "@material-ui/icons/Home";
+import React from "react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import Post from "./components/Post";
+import Search from "./components/Search";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -15,8 +14,7 @@ const useStyles = makeStyles(() => ({
     "overflow-x": "hidden",
   },
   main: {
-    marginBottom: "-1px",
-    minHeight: "85vh",
+    minHeight: "calc(100vh - 120px)",
   },
 
   component1: {
@@ -50,10 +48,11 @@ export default function Home() {
           <Switch>
             <Route path="/">
               <Grid container spacing={2}>
-                <Grid className={classes.component1} item xs={12} sm={12}>
-                  <Paper elevation={3}>
-                   Home
-                  </Paper>
+                <Grid className={classes.component1} item xs={12} sm={6}>
+                  <Post />
+                </Grid>
+                <Grid className={classes.component1} item xs={12} sm={6}>
+                  <Search />
                 </Grid>
               </Grid>
             </Route>
